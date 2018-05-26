@@ -1,0 +1,30 @@
+{
+  "name": "twitter-example",
+  "version": "1.0.0",
+  "description": "Twiiter sentiment analysis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node twitter-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuan930216/Twit.git"
+  },
+  "author": "xuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xuan930216/Twit/issues"
+  },
+  "homepage": "https://github.com/xuan930216/Twit#readme",
+  "dependencies": {
+    "@google-cloud/language": "^1.2.0",
+    "async": "^2.4.0",
+    "bad-words": "^1.5.1",
+    "firebase-admin": "^4.2.1",
+    "google-cloud": "^0.53.0",
+    "request": "^2.86.0",
+    "twit": "^2.2.9",
+    "twitter": "^1.7.0"
+  }
+}

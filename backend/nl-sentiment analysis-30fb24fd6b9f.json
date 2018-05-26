@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "nl-sentiment-analysis-204704",
+  "private_key_id": "30fb24fd6b9fd88b9a4e018312edb7008ecd9adf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCJ+iT2nRoJKKpX\nbNG1rQaArX50LbvXeU3riQ+FUt+RD4SFXVNMOP7VKOw/6AD3jJzl0JZ+nl2KGPHa\nMif7VrQx25PJmHZzMantfIx2rcO+9tyAjs+Mh8VBU9x0KZu9OjgWljObeVz8VarF\nJJ4JgNz4eaIb50FvrdlZvVnE9sGAVZbJMIOjDKhN35aKA5dISkYU52b1SvxzLHbl\nZOo7kRlUsAvGCTy7yaq1gh0l9k/9TBlzZlbsV6GZHLuuxPnRm90T/k1JPyum3bKt\n8BHIJgSKi4QLeCZv6K5GuX0Q7rcQA8CmqQ3WRt1jv0XSXme/xkMpgFGU5rlP1eTC\nkNTSbwiLAgMBAAECggEAAK0B+1c/pmXVl8IHsO0dCApRgT4sGl0UvZ+ZPNzwDWTX\nEFQpsUjiLqcZqSJ4xr2gkxuXcR1TdfazUI9IVNnS3h+mNKmTgvLuUyR2B6rIN6o7\n4EFS0OxlUfGYNdVyVtXvKmUn8Y4Bn5bH1FlekMtZybnGyn4yetqOIvtjciyHPBqt\nYAlZrjTGjaTRhxcGRE10rmaiAHxBOPNEUOFEmzw+r5p+u6hEsSPUKlmvlXt4s7JP\nOw4G83RU0onoiNXVKxkkT4WCzQDC+q2u1OTbAg/JXdRpowwEbALvChe1AjkZHDBz\n8jvEPE+pjSvDlOAd/AaAFmHrmOk24y6RZDUb3CNB6QKBgQC+PBIZzmKR47wCqygI\nc2GMXsoPb320cpRuIHCCRjj2WVZ7Urkxw2k5Z2NHSrgeaYQiJXM/VcPyp8w3KG9o\nQtnCWGr2d8aiVKAkQFf8HraD0GUKxNgTQFUXKOuartExzwNM7Mz8amKAnjN580ND\nF5pFzw7F21igJdq8phDUqEGkPQKBgQC5rTzxwsFoOTHLxOWkGoN0cUdJ3usFpUmq\ni92wIVNqFLnLWDJBrDK9uRrmeE7LXL50OQI9fAiyPH62+OHtU37Jp8e3tE/gsjX4\n1YUFxxtsTEU0Ut0b734EWp3z+/L8pqI88rY2C3mbHDkNjgAjvum0358FFJ8BuF8v\nd9B+xZkEZwKBgCRzBBDXv4Eufl6QhsofuWgY3WRZu18wuQnkw0nixJVHBs/4SK2l\nQGsUSSxmv6JsGzojrNJMz4+V4QYMhFQYwvp+0HfK+U8vIcPwZCtVgyj8a+/FSZVe\ntS8L0yC/MCv3+yzpDlmq1JbKORi7qH6ZbiDEDJOSdIey2RdeRklIt9MNAoGBAIE0\nyTUfJoFFU56NvJOOk61i6o3AHuHF3FZej/zxo98s3wFetVI35vNZLRv12jbvqeSs\nix+IAXEuYasn0+fXc2IWbAcs5Wzh9mbbBn83x6B8DqhThWPcK2ASQto2mCcyObGZ\n4CwJnizO3fDNwNEfF/hyqHDboa6Lw0j/4kllbY6/AoGAR7IetlMAX5UljILE20b2\nJPkfGM/uCzhPBVkIaRzaU3DDpN8wyEKIkHtQDfLE2V+U60GMeY1XII/QXh509SZN\n+JhnjVo33YgNVlNfWVQbyWubGk3ZSLYcWYsSbB+38M7SVkxqtm4dH3IaTIlWF3go\npI7sD4AEJX6mqBjzGpn3HGA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloudnaturallanguageapi@nl-sentiment-analysis-204704.iam.gserviceaccount.com",
+  "client_id": "103526585128173071503",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloudnaturallanguageapi%40nl-sentiment-analysis-204704.iam.gserviceaccount.com"
+}
