@@ -19,6 +19,7 @@ admin.initializeApp({
 const db = admin.database();
 const tweetRef = db.ref('latest');
 const hashtagRef = db.ref('hashtags');
+const acceptedWordTypes = ['ADJ']; // Add the parts of speech you'd like to graph to this array ('NOUN', 'VERB', etc.)
 
 
 //get stream in a callback
@@ -88,6 +89,32 @@ tweetRef.on('value', function(snap){
         let tweet = snap.val();
         let tokens = tweet['tokens'];
         let hashtags = tweet['hashtags'];
-        
+        for(let token of tokens){
+           let word = token.lemma.toLowerCase();
+           if((acceptedWordTypes.indexOf(token.partOfSpeech.tag) != -1) && !(word.match(/[^A-Za-z0-9]/g))){
+               let posRef = db.ref('tokens/' + token.partOfSpeech.tag);
+               incrementCount(posRef, word, 1);
+           } 
+        }
+
+        if(hashtags){
+            for(let hashtag of hashtags){
+                let text = hashtag.toLowerCase();
+                let hRef = hashtagRef.child(text);
+                incrementCount(htRef, 'totalScore', tweet.score);
+                incrementCount(htRef, 'numMentions', 1);
+            }
+        }
     }
 })
+
+function incrementCount(ref, child, valToIncrement){
+    ref.child(child).transaction(function(data){
+        if(data != null){
+            data += valToIncrement;
+        } else{
+            data = 1;
+        }
+        return data;
+    });
+}
