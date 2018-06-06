@@ -21,6 +21,17 @@ const tweetRef = db.ref('latest');
 const hashtagRef = db.ref('hashtags');
 const acceptedWordTypes = ['ADJ']; // Add the parts of speech you'd like to graph to this array ('NOUN', 'VERB', etc.)
 
+//initialize bigQuery
+const BigQuery = require('@google-cloud/bigquery');
+// Your Google Cloud Platform project ID
+const projectId = config.project_id2;
+// Creates a client
+const bigquery = new BigQuery({
+    projectId: projectId,
+    keyFilename: 'keyfile.json'
+});
+const dataset = bigquery.dataset(config.bigquery_dataset);
+const table = dataset.table(config.bigquery_table);
 
 //get stream in a callback
 client.stream('statuses/filter', {track: searchTerms}, function(stream){
@@ -78,8 +89,32 @@ function callNLApi(tweet){
         tweetRef.set(tweetForFb).then(msg => {
             console.log('save!');
         })
+
+        //save all twitter to bigquery table
+        let bqRow = {
+            id: tweet.id_str,
+            text: tweet.text,
+            user: tweet.user.screen_name,
+            user_time_zone: tweet.user_time_zone,
+            user_followers_count: tweet.user_followers_count,
+            hashtags: JSON.stringify(tweet.entities.hashtags),
+            tokens: JSON.stringify(body.tokens),
+            score: body.documentSentiment.score,
+            magnitude: body.documentSentiment.magnitude,
+            entities: JSON.stringify(body.entities)
+        }
+        table.insert(bqRow, function(error, insertErr, apiResp){
+            if(error){
+                console.log('err', error);
+            } else if (insertErr.length == 0){
+                console.log('success!')
+            }
+        });
        }
-   })
+       else{
+           console.log('NL API error', err);
+       }
+   });
 
 }
 
@@ -99,8 +134,8 @@ tweetRef.on('value', function(snap){
 
         if(hashtags){
             for(let hashtag of hashtags){
-                let text = hashtag.toLowerCase();
-                let hRef = hashtagRef.child(text);
+                let text = hashtag['text'].toLowerCase();
+                let htRef = hashtagRef.child(text);
                 incrementCount(htRef, 'totalScore', tweet.score);
                 incrementCount(htRef, 'numMentions', 1);
             }
